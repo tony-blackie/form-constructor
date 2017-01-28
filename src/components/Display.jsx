@@ -8,7 +8,9 @@ export default class Display extends Component {
         return (
             <div className="display">
                 <Info />
-                <Form />
+                <Form
+                    hidden={true}
+                />
             </div>
         );
     }

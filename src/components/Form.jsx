@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 
 export default class Form extends Component {
+
     render() {
+        const hidden = this.props.hidden ? 'hidden' : 'shown';
+
         return (
-            <form>Form</form>
+            <form className={`form form-${hidden}`}>Form</form>
         );
     }
 }
