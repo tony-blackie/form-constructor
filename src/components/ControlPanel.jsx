@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 
+import FormTemplate from './FormTemplate.jsx';
+import FormConstructor from './FormConstructor.jsx';
+import FormConfig from './FormConfig.jsx';
+
 export default class ControlPanel extends Component {
     render() {
         return (
             <div>
-                <div>Control Item</div>
-                <div>Control Item</div>
-                <div>Control Item</div>
+                <FormTemplate />
+                <FormConstructor />
+                <FormConfig />
             </div>
         );
     }
