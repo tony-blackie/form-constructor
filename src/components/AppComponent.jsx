@@ -11,26 +11,29 @@ export default class App extends Component {
         super(props);
 
         this.state = {
-
+            formElements: []
         };
 
-        this.handleChange = this.handleChange.bind(this);
-    }
-
-    handleChange(event) {
-        this.setState({name: event.target.value})
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit(formElement) {
-        console.log(formElement.elementType);
-        console.log(formElement.value);
+        let currentFormElements = this.state.formElements;
+        currentFormElements.push(
+            {
+                type: formElement.elementType,
+                value: formElement.value
+            }
+        );
+
+        this.setState({ formElements: currentFormElements });
     }
 
     render() {
         return (
             <div>
                 <ControlPanel handleSubmit={this.handleSubmit}/>
-                <Display />
+                <Display formElements={this.state.formElements} />
             </div>
         );
     }
