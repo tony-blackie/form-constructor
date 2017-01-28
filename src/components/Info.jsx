@@ -1,6 +1,16 @@
 import React, { Component } from 'react';
 
 export default class Info extends Component {
+    constructor(props) {
+        super(props);
+
+        this.createForm = this.createForm.bind(this);
+    }
+
+    createForm() {
+        this.props.createForm();
+    }
+
     render() {
 
         const FORM_ELEMENT_TYPES = {
@@ -31,7 +41,8 @@ export default class Info extends Component {
                 <p>{checkboxCounter} Checkboxes</p>
                 <p>{textCounter} Text Inputs</p>
                 <p>{labelCounter} Labels</p>
-                <button>Create Form</button>
+
+                <button onClick={this.createForm}>Create Form</button>
             </div>
         );
     }

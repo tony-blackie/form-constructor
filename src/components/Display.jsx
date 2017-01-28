@@ -5,11 +5,24 @@ import Form from './Form.jsx';
 
 export default class Display extends Component {
 
+    constructor(props) {
+        super(props);
+
+        this.createForm = this.createForm.bind(this);
+    }
+
+    createForm() {
+        this.props.createForm();
+    }
+
     render() {
 
         return (
             <div className="display">
-                <Info formElements={this.props.formElements} />
+                <Info
+                    formElements={this.props.nextState}
+                    createForm={this.createForm}
+                />
                 <Form
                     hidden={this.props.formElements.length === 0}
                     formElements={this.props.formElements}

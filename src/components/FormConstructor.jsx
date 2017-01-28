@@ -45,7 +45,7 @@ export default class FormConstructor extends Component {
                     </select>
                 </div>
                 <div className="constructor__component">
-                    <button onClick={this.handleSubmit}>Add text input</button>
+                    <button onClick={this.handleSubmit}>Add {this.state.elementType}</button>
                 </div>
             </div>
         );

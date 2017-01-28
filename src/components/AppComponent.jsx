@@ -12,16 +12,15 @@ export default class App extends Component {
 
         this.state = {
             formElements: [],
-            nextState: {
-                formElements: []
-            }
+            nextState: []
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.createForm = this.createForm.bind(this);
     }
 
     handleSubmit(formElement) {
-        let currentFormElements = this.state.formElements;
+        let currentFormElements = this.state.nextState.slice();
 
         currentFormElements.push(
             {
@@ -32,17 +31,24 @@ export default class App extends Component {
 
         this.setState(
             {
-                formElements: currentFormElements,
-                ...this.state
+                nextState: currentFormElements
             }
         );
+    }
+
+    createForm() {
+        this.setState({formElements: this.state.nextState});
     }
 
     render() {
         return (
             <div>
-                <ControlPanel handleSubmit={this.handleSubmit}/>
-                <Display formElements={this.state.formElements} />
+                <ControlPanel handleSubmit={this.handleSubmit} />
+                <Display
+                    formElements={this.state.formElements}
+                    nextState={this.state.nextState}
+                    createForm={this.createForm}
+                />
             </div>
         );
     }
