@@ -20,8 +20,10 @@ module.exports = {
                 include: path.join(__dirname, 'src')
             },
             {
-                test: /\.css$/,
-                loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
+                test: /\.scss$/,
+                loader: ExtractTextPlugin.extract(
+                    'css!sass'
+                )
             }
         ]
     },
@@ -40,6 +42,6 @@ module.exports = {
                 chunks: ['app']
             }
         ),
-        new ExtractTextPlugin("[name].css")
+        new ExtractTextPlugin('style.css', {allChunks: true})
     ]
 };
