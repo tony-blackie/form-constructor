@@ -4,10 +4,20 @@ export default class Info extends Component {
     constructor(props) {
         super(props);
 
+        this.state = {
+            isErrorShown: false
+        };
+
         this.createForm = this.createForm.bind(this);
     }
 
     createForm() {
+        if (this.props.formElements.length === 0) {
+            this.setState({isErrorShown: true});
+        } else {
+            this.setState({isErrorShown: false});
+        }
+
         this.props.createForm();
     }
 
@@ -43,6 +53,12 @@ export default class Info extends Component {
                 <p>{labelCounter} Labels</p>
 
                 <button onClick={this.createForm}>Create Form</button>
+                {
+                    this.state.isErrorShown ?
+                    <div>Form can't have 0 elements. Please use Form Constructor to add some</div>
+                    : null
+                }
+
             </div>
         );
     }
