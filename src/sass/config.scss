@@ -1,0 +1,17 @@
+.config {
+  overflow-Y: scroll;
+
+  &__textarea {
+    width: 98%;
+    min-height: 100px;
+  }
+
+  &__submit-wrapper {
+    text-align: center;
+    margin: 10px 0 10px 0;
+  }
+
+  &__submit {
+    width: 100px;
+  }
+}
