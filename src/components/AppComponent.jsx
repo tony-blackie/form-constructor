@@ -11,7 +11,10 @@ export default class App extends Component {
         super(props);
 
         this.state = {
-            formElements: []
+            formElements: [],
+            nextState: {
+                formElements: []
+            }
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,6 +22,7 @@ export default class App extends Component {
 
     handleSubmit(formElement) {
         let currentFormElements = this.state.formElements;
+
         currentFormElements.push(
             {
                 type: formElement.elementType,
@@ -26,7 +30,12 @@ export default class App extends Component {
             }
         );
 
-        this.setState({ formElements: currentFormElements });
+        this.setState(
+            {
+                formElements: currentFormElements,
+                ...this.state
+            }
+        );
     }
 
     render() {

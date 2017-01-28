@@ -3,14 +3,27 @@ import React, { Component } from 'react';
 export default class Form extends Component {
 
     render() {
-        const formElements = this.props.formElements.map((element) => {
+        const formElements = this.props.formElements.map((element, index) => {
             switch (element.type) {
                 case 'label':
-                    return (<label>{element.value}</label>);
+                    return (
+                        <div className="form__row" key={index}>
+                            <label>{element.value}</label>
+                        </div>
+                    );
                 case 'text':
-                    return (<input type={element.type} placeholder={element.value} />);
+                    return (
+                        <div>
+                            <input type={element.type} key={index} placeholder={element.value} />
+                        </div>);
                 case 'checkbox':
-                    return (<div>Checkbox</div>);
+                    return (
+                        <div className="form__row" key={index}>
+                            <input type={element.type}/>
+                            {element.value}
+                        </div>);
+                default:
+                    return null;
             }
         });
         const hidden = this.props.hidden ? 'hidden' : 'shown';
