@@ -6,25 +6,26 @@ export default class FormConstructor extends Component {
         super(props);
 
         this.state = {
-            formInputType: 'label',
-            textInputValue: ''
+            elementType: 'label',
+            value: ''
         };
 
-        this.handleClick = this.handleClick.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
         this.handleSelectChange = this.handleSelectChange.bind(this);
         this.handleTextChange = this.handleTextChange.bind(this);
     }
 
-    handleClick(event) {
-        //this.props.handleClick(this.state);
+    handleSubmit(event) {
+        this.props.handleSubmit(this.state);
+        event.preventDefault();
     }
 
     handleSelectChange(event) {
-        this.setState({formInputType: event.target.value})
+        this.setState({elementType: event.target.value})
     }
 
     handleTextChange(event) {
-        this.setState({textInputValue: event.target.value})
+        this.setState({value: event.target.value})
     }
 
     render() {
@@ -36,14 +37,14 @@ export default class FormConstructor extends Component {
                 </div>
                 <div className="constructor__component">
                     <label>Select the type of a form element</label>
-                    <select value={this.state.value} onChange={this.handleSelectChange}>
-                        <option value="label" defaultValue>Label</option>
+                    <select value={this.state.elementType} onChange={this.handleSelectChange}>
+                        <option value="label">Label</option>
                         <option value="checkbox">Checkbox</option>
                         <option value="text">Text input</option>
                     </select>
                 </div>
                 <div className="constructor__component">
-                    <button onClick={this.handleClick}>Add text input</button>
+                    <button onClick={this.handleSubmit}>Add text input</button>
                 </div>
             </div>
         );

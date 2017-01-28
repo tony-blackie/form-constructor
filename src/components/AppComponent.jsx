@@ -21,10 +21,15 @@ export default class App extends Component {
         this.setState({name: event.target.value})
     }
 
+    handleSubmit(formElement) {
+        console.log(formElement.elementType);
+        console.log(formElement.value);
+    }
+
     render() {
         return (
             <div>
-                <ControlPanel />
+                <ControlPanel handleSubmit={this.handleSubmit}/>
                 <Display />
             </div>
         );
