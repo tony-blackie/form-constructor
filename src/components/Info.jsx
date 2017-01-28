@@ -14,6 +14,7 @@ export default class Info extends Component {
     createForm() {
         if (this.props.formElements.length === 0) {
             this.setState({isErrorShown: true});
+            return;
         } else {
             this.setState({isErrorShown: false});
         }

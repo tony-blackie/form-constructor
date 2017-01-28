@@ -7,7 +7,8 @@ export default class FormConstructor extends Component {
 
         this.state = {
             elementType: 'label',
-            value: ''
+            value: '',
+            isErrorShown: false
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -16,6 +17,12 @@ export default class FormConstructor extends Component {
     }
 
     handleSubmit(event) {
+        if (this.state.value === '') {
+            this.setState({isErrorShown: true});
+            return;
+        } else {
+            this.setState({isErrorShown: false});
+        }
         this.props.handleSubmit(this.state);
         event.preventDefault();
     }
@@ -47,6 +54,11 @@ export default class FormConstructor extends Component {
                 <div className="constructor__component">
                     <button onClick={this.handleSubmit}>Add {this.state.elementType}</button>
                 </div>
+                {
+                    this.state.isErrorShown ?
+                        <div>Input field for the form element should not be empty</div>
+                        : null
+                }
             </div>
         );
     }
