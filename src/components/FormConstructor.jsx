@@ -6,19 +6,25 @@ export default class FormConstructor extends Component {
         super(props);
 
         this.state = {
-            formInputType: 'label'
+            formInputType: 'label',
+            textInputValue: ''
         };
 
         this.handleClick = this.handleClick.bind(this);
-        this.handleChange = this.handleChange.bind(this);
+        this.handleSelectChange = this.handleSelectChange.bind(this);
+        this.handleTextChange = this.handleTextChange.bind(this);
     }
 
     handleClick(event) {
-        this.props.handleClick()
+        //this.props.handleClick(this.state);
     }
 
-    handleChange(event) {
+    handleSelectChange(event) {
         this.setState({formInputType: event.target.value})
+    }
+
+    handleTextChange(event) {
+        this.setState({textInputValue: event.target.value})
     }
 
     render() {
@@ -26,13 +32,17 @@ export default class FormConstructor extends Component {
             <div className="constructor">
                 <div className="constructor__component">
                     <label>Please, input the text you want to be inside the element</label>
-
-                    <select value={this.state.value} onChange={this.handleChange}>
-                        <option value="label">Label</option>
+                    <input type="text" placeholder="Text goes here" onChange={this.handleTextChange} />
+                </div>
+                <div className="constructor__component">
+                    <label>Select the type of a form element</label>
+                    <select value={this.state.value} onChange={this.handleSelectChange}>
+                        <option value="label" defaultValue>Label</option>
                         <option value="checkbox">Checkbox</option>
                         <option value="text">Text input</option>
                     </select>
-
+                </div>
+                <div className="constructor__component">
                     <button onClick={this.handleClick}>Add text input</button>
                 </div>
             </div>
