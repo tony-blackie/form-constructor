@@ -7,7 +7,7 @@ import FormConfig from './FormConfig.jsx';
 export default class ControlPanel extends Component {
     render() {
         return (
-            <div>
+            <div className="control-panel">
                 <FormTemplate />
                 <FormConstructor />
                 <FormConfig />

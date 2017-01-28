@@ -6,7 +6,7 @@ import Form from './Form.jsx';
 export default class Display extends Component {
     render() {
         return (
-            <div>
+            <div className="display">
                 <Info />
                 <Form />
             </div>

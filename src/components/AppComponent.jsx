@@ -3,6 +3,7 @@ import ReactDOM, { render } from 'react-dom';
 import { Link } from 'react-router';
 import ControlPanel from './ControlPanel.jsx';
 import Display from './Display.jsx';
+import styles from '../sass/index.scss';
 
 
 export default class App extends Component {
