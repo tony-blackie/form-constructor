@@ -11,7 +11,7 @@ export default class Display extends Component {
             <div className="display">
                 <Info formElements={this.props.formElements} />
                 <Form
-                    hidden={true}
+                    hidden={false}
                     formElements={this.props.formElements}
                 />
             </div>
