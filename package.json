@@ -6,7 +6,8 @@
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:dev": "node_modules/.bin/webpack-dev-server --inline --content-base dist --history-api-fallback",
-    "start:prod": "node_modules/.bin/webpack && node server.js"
+    "start:prod": "node_modules/.bin/webpack && node server.js",
+    "build": "node_modules/.bin/webpack"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +18,8 @@
     "css-loader": "^0.26.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "html-webpack-plugin": "^2.24.1",
+    "node-sass": "^4.4.0",
+    "sass-loader": "^4.1.1",
     "style-loader": "^0.13.1",
     "webpack": "^1.14.0",
     "webpack-dev-server": "^1.16.2"
