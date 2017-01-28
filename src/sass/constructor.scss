@@ -1,8 +1,23 @@
 .constructor {
   border-top: 1px solid lightgray;
   border-bottom: 1px solid lightgray;
+  padding: 0 10px 0 10px;
 
   &__component {
-    padding: 20px 0 20px 0;
+    padding: 10px 0 10px 0;
+  }
+
+  &__select {
+    display: block;
+    width: 100%;
+  }
+
+  &__submit-wrapper {
+    text-align: center;
+    padding: 10px 0 10px 0;
+  }
+
+  &__submit {
+    width: 100px;
   }
 }

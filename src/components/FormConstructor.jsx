@@ -45,14 +45,24 @@ export default class FormConstructor extends Component {
                 </div>
                 <div className="constructor__component">
                     <label>Select the type of a form element</label>
-                    <select value={this.state.elementType} onChange={this.handleSelectChange}>
+
+                    <select
+                        value={this.state.elementType}
+                        onChange={this.handleSelectChange}
+                        className="constructor__select"
+                    >
                         <option value="label">Label</option>
                         <option value="checkbox">Checkbox</option>
                         <option value="text">Text input</option>
                     </select>
                 </div>
-                <div className="constructor__component">
-                    <button onClick={this.handleSubmit}>Add {this.state.elementType}</button>
+                <div className="constructor__submit-wrapper">
+                    <button
+                        onClick={this.handleSubmit}
+                        className="constructor__submit"
+                    >
+                        Add {this.state.elementType}
+                    </button>
                 </div>
                 {
                     this.state.isErrorShown ?

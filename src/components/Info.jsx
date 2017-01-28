@@ -48,12 +48,14 @@ export default class Info extends Component {
 
         return (
             <div>
-                <p>Current form consists of:</p>
+                <h3>You've added:</h3>
                 <p>{checkboxCounter} Checkboxes</p>
                 <p>{textCounter} Text Inputs</p>
                 <p>{labelCounter} Labels</p>
 
-                <button onClick={this.createForm}>Create Form</button>
+                <button onClick={this.createForm}>
+                    Create Form
+                </button>
                 {
                     this.state.isErrorShown ?
                     <div>Form can't have 0 elements. Please use Form Constructor to add some</div>
