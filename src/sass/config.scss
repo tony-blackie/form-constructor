@@ -12,6 +12,15 @@
   }
 
   &__submit {
-    width: 100px;
+    width: 130px;
+  }
+
+  &__example-wrapper {
+    text-align: center;
+    margin: 10px 0 10px 0;
+  }
+
+  &__example-button {
+    width: 130px;
   }
 }
