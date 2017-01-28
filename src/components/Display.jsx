@@ -6,15 +6,13 @@ import Form from './Form.jsx';
 export default class Display extends Component {
 
     render() {
-        if(this.props.formElements.length !== 0) {
-            console.log(this.props.formElements);
-        }
 
         return (
             <div className="display">
-                <Info />
+                <Info formElements={this.props.formElements} />
                 <Form
                     hidden={true}
+                    formElements={this.props.formElements}
                 />
             </div>
         );
