@@ -5,9 +5,10 @@ const ExampleJSON = () => {
     return (
 <pre>
 {`
+It should be an array of objects.
 Each form element should be
 represented as a separate
-object:
+object with such fields:
 
 [
     {
@@ -17,6 +18,10 @@ object:
     {
         "type": "label",
         "value": "This is a new label"
+    },
+    {
+        "type": "text",
+        "value": "Input text here"
     }
 ]
 `}
