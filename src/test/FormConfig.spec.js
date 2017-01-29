@@ -32,11 +32,11 @@ describe('<FormConfig/> tests', () => {
     it('should call handleJSONSubmit on button click', () => {
         const spy = sandbox.spy(FormConfig.prototype, 'handleJSONSubmit');
 
-        let newComponent = mount(<FormConfig />);
-        newComponent.find('.config__submit').simulate('click');
+        component = shallow(<FormConfig />);
+        component.find('.config__submit').simulate('click');
         expect(spy.calledOnce).to.equal(true);
     });
-    
+
     it('should handle textarea change', () => {
         const spy = sandbox.spy(FormConfig.prototype, 'handleTextareaChange');
 
