@@ -14,12 +14,17 @@ export default class Form extends Component {
                 case 'text':
                     return (
                         <div className="form__row" key={index}>
-                            <input type={element.type} key={index} placeholder={element.value} />
+                            <input
+                                type={element.type}
+                                key={index}
+                                placeholder={element.value}
+                                className="form__input"
+                            />
                         </div>);
                 case 'checkbox':
                     return (
                         <div className="form__row" key={index}>
-                            <input type={element.type}/>
+                            <input type={element.type} className="form__input" />
                             <span>{element.value}</span>
                         </div>);
                 default:
@@ -30,11 +35,15 @@ export default class Form extends Component {
 
         return (
             <form className={`form form-${hidden}`}>
-                <h2>Form</h2>
+                <h2 className="form__header">Form</h2>
                 <fieldset className="form__fieldset">
                     {formElements}
                     <br/>
-                    <input type="submit" value="Submit"/>
+                    <input
+                        type="submit"
+                        value="Submit"
+                        className="form__submit"
+                    />
                 </fieldset>
             </form>
         );
