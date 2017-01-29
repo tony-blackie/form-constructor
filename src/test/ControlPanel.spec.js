@@ -5,14 +5,13 @@ import {expect} from 'chai';
 import ControlPanel from '../components/ControlPanel.jsx';
 
 describe('<ControlPanel/>', function () {
-    it('should have an image to display the gravatar', function () {
-        const wrapper = shallow(<ControlPanel/>);
-        expect(wrapper.find('img')).to.have.length(1);
+    it('should check if FormConfig component rendered', () => {
+        const component = mount(<ControlPanel/>);
+        expect(component.find('FormConfig')).to.have.length(1);
     });
 
-    it('should have props for email and src', function () {
-        const wrapper = shallow(<ControlPanel/>);
-        //expect(wrapper.props().email).to.be.defined;
-        //expect(wrapper.props().src).to.be.defined;
-    });
+    it('should check if FormConstructor component rendered', () => {
+        const component = mount(<ControlPanel/>);
+        expect(component.find('FormConstructor')).to.have.length(1);
+    })
 });
