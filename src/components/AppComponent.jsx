@@ -42,7 +42,15 @@ export default class App extends Component {
     }
 
     handleJSONSubmit(json) {
-        console.log(json);
+        try {
+            let parsedJSON = JSON.parse(json);
+        }
+        catch(error) {
+            console.log(error);
+            return;
+        }
+
+        this.setState({formElements: parsedJSON});
     }
 
     render() {
