@@ -17,7 +17,12 @@ export default class FormConfig extends Component {
     }
 
     toggleExample(event) {
-        this.setState({isExampleVisible: !this.state.isExampleVisible});
+        this.setState((previousState) =>
+        {
+            return {
+                isExampleVisible: !previousState.isExampleVisible
+            }
+        });
     }
 
     handleTextareaChange(event) {
