@@ -7,19 +7,28 @@ export default class FormConfig extends Component {
         super(props);
 
         this.state = {
-            isExampleVisible: false
+            isExampleVisible: false,
+            textareaValue: ''
         };
 
         this.toggleExample = this.toggleExample.bind(this);
         this.handleTextareaChange = this.handleTextareaChange.bind(this);
+        this.handleJSONSubmit = this.handleJSONSubmit.bind(this);
     }
 
     toggleExample(event) {
         this.setState({isExampleVisible: !this.state.isExampleVisible});
     }
 
-    handleTextareaChange() {
+    handleTextareaChange(event) {
+        this.setState({textareaValue: event.target.value});
+    }
 
+    handleJSONSubmit() {
+        if (this.state.textareaValue === '' ) {
+            return;
+        }
+        this.props.handleJSONSubmit(this.state.textareaValue);
     }
 
     render() {
@@ -51,7 +60,12 @@ export default class FormConfig extends Component {
                 </textarea>
 
                 <div className="config__submit-wrapper">
-                    <input type="submit" value="Submit JSON" className="config__submit" />
+                    <input
+                        type="submit"
+                        value="Submit JSON"
+                        className="config__submit"
+                        onClick={this.handleJSONSubmit}
+                    />
                 </div>
             </form>
         );

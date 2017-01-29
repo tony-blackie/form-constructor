@@ -17,6 +17,7 @@ export default class App extends Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.createForm = this.createForm.bind(this);
+        this.handleJSONSubmit = this.handleJSONSubmit.bind(this);
     }
 
     handleSubmit(formElement) {
@@ -40,10 +41,17 @@ export default class App extends Component {
         this.setState({formElements: this.state.nextState});
     }
 
+    handleJSONSubmit(json) {
+        console.log(json);
+    }
+
     render() {
         return (
             <div>
-                <ControlPanel handleSubmit={this.handleSubmit} />
+                <ControlPanel
+                    handleSubmit={this.handleSubmit}
+                    handleJSONSubmit={this.handleJSONSubmit}
+                />
                 <Display
                     formElements={this.state.formElements}
                     nextState={this.state.nextState}

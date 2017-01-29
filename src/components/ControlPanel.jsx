@@ -9,10 +9,15 @@ export default class ControlPanel extends Component {
         super(props);
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleJSONSubmit = this.handleJSONSubmit.bind(this);
     }
 
     handleSubmit(formElement) {
         this.props.handleSubmit(formElement);
+    }
+
+    handleJSONSubmit(json) {
+        this.props.handleJSONSubmit(json);
     }
 
     render() {
@@ -20,7 +25,7 @@ export default class ControlPanel extends Component {
             <div className="control-panel">
                 <FormTemplate />
                 <FormConstructor handleSubmit={this.handleSubmit} />
-                <FormConfig />
+                <FormConfig handleJSONSubmit={this.handleJSONSubmit} />
             </div>
         );
     }
