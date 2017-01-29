@@ -36,4 +36,12 @@ describe('<FormConfig/> tests', () => {
         newComponent.find('.config__submit').simulate('click');
         expect(spy.calledOnce).to.equal(true);
     });
+    
+    it('should handle textarea change', () => {
+        const spy = sandbox.spy(FormConfig.prototype, 'handleTextareaChange');
+
+        component = mount(<FormConfig/>);
+        component.find('.config__textarea').simulate('change');
+        expect(spy.calledOnce).to.equal(true);
+    });
 });
