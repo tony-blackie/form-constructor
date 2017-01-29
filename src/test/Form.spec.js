@@ -39,4 +39,9 @@ describe('<Form/> tests', () => {
         expect(component.find('input[type="checkbox"]').html()).to.equal('<input type="checkbox">');
         expect(component.find('span').html()).to.equal('<span>1337</span>');
     });
+
+    it('should always render submit button', () => {
+        const component = mount(<Form formElements={[]} />);
+        expect(component.find('input').html()).to.equal('<input type="submit" value="Submit">');
+    })
 });
