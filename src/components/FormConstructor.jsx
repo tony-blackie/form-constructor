@@ -73,7 +73,9 @@ export default class FormConstructor extends Component {
                 </div>
                 {
                     this.state.isErrorShown ?
-                        <div>Input field for the form element should not be empty</div>
+                        <div className="constructor__error">
+                            Input field for the form element should not be empty
+                        </div>
                         : null
                 }
             </div>

@@ -1,6 +1,10 @@
 .config {
   overflow-Y: scroll;
   font: 13px Arial, Helvetica, sans-serif;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 10px;
 
   &__textarea {
     width: 98%;
@@ -79,5 +83,9 @@
       background: #EA7B00;
       color: #fff;
     }
+  }
+
+  &__error {
+    margin: 10px 0 10px 0;
   }
 }
