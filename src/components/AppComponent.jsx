@@ -12,7 +12,8 @@ export default class App extends Component {
 
         this.state = {
             formElements: [],
-            nextState: []
+            nextState: [],
+            isJSONInvalid: false
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -42,11 +43,13 @@ export default class App extends Component {
     }
 
     handleJSONSubmit(json) {
+        let parsedJSON;
+
         try {
-            let parsedJSON = JSON.parse(json);
+            parsedJSON = JSON.parse(json);
         }
         catch(error) {
-            console.log(error);
+            this.setState({isJSONInvalid: true});
             return;
         }
 
@@ -59,6 +62,7 @@ export default class App extends Component {
                 <ControlPanel
                     handleSubmit={this.handleSubmit}
                     handleJSONSubmit={this.handleJSONSubmit}
+                    isJSONInvalid={this.state.isJSONInvalid}
                 />
                 <Display
                     formElements={this.state.formElements}

@@ -51,6 +51,12 @@ export default class FormConfig extends Component {
                     : null
                 }
 
+                {
+                    this.props.isJSONInvalid ?
+                    <div>There seems to be a problem with your JSON. Check out the example!</div>
+                    : null
+                }
+
 
 
                 <textarea
