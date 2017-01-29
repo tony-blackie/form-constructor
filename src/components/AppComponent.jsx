@@ -5,9 +5,6 @@ import ControlPanel from './ControlPanel.jsx';
 import Display from './Display.jsx';
 import styles from '../sass/index.scss';
 
-import login from '../form-templates/login.json';
-
-
 export default class App extends Component {
     constructor(props) {
         super(props);
@@ -59,7 +56,6 @@ export default class App extends Component {
     }
 
     render() {
-        console.log(login);
         return (
             <div>
                 <ControlPanel
