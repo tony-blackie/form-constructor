@@ -31,8 +31,12 @@ export default class FormTemplate extends Component {
 
         const renderTemplates = this.state.templateArray.map((template, index) => {
             return (
-                <div className="template__item" key={index} onClick={this.renderChosenTemplate.bind(this, index)}>
-                    <button>{template.name}</button>
+                <div
+                    className="template__item"
+                    key={index}
+                    onClick={this.renderChosenTemplate.bind(this, index)}
+                >
+                    <button className="template__submit">{template.name}</button>
                 </div>
             );
         });
