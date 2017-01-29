@@ -3,7 +3,7 @@ import ReactDOM, { render } from 'react-dom';
 import { Link } from 'react-router';
 import ControlPanel from './ControlPanel.jsx';
 import Display from './Display.jsx';
-import styles from '../sass/index.scss';
+import Styles from '../sass/index.scss';
 
 export default class App extends Component {
     constructor(props) {
@@ -18,6 +18,7 @@ export default class App extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.createForm = this.createForm.bind(this);
         this.handleJSONSubmit = this.handleJSONSubmit.bind(this);
+        this.handleChosenTemplate = this.handleChosenTemplate.bind(this);
     }
 
     handleSubmit(formElement) {
@@ -55,6 +56,10 @@ export default class App extends Component {
         this.setState({formElements: parsedJSON});
     }
 
+    handleChosenTemplate(template) {
+        this.setState({formElements: template.data})
+    }
+
     render() {
         return (
             <div>
@@ -62,6 +67,7 @@ export default class App extends Component {
                     handleSubmit={this.handleSubmit}
                     handleJSONSubmit={this.handleJSONSubmit}
                     isJSONInvalid={this.state.isJSONInvalid}
+                    handleChosenTemplate={this.handleChosenTemplate}
                 />
                 <Display
                     formElements={this.state.formElements}

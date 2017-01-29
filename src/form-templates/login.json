@@ -1,18 +1,18 @@
 [
   {
     "type": "label",
-    "text": "Log in"
+    "value": "Log in"
   },
   {
     "type": "text",
-    "text": "Login"
+    "value": "Login"
   },
   {
     "type": "text",
-    "text": "Password"
+    "value": "Password"
   },
   {
     "type": "checkbox",
-    "text": "Don't remember me"
+    "value": "Don't remember me"
   }
 ]

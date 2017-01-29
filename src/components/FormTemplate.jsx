@@ -7,31 +7,32 @@ export default class FormTemplate extends Component {
     constructor(props) {
         super(props);
 
+        this.state = {
+            templateArray: [
+                {
+                    name: 'Login',
+                    data: login
+                },
+                {
+                    name: 'Feedback',
+                    data: feedback
+                }
+            ]
+        };
+
         this.renderChosenTemplate = this.renderChosenTemplate.bind(this);
     }
 
     renderChosenTemplate(index) {
-        //this.props.renderChosenTemplate(index);
+        this.props.renderChosenTemplate(this.state.templateArray[index]);
     }
 
     render() {
 
-        const templateArray = [
-            {
-                name: 'Login',
-                data: login
-            },
-            {
-                name: 'Feedback',
-                data: feedback
-            }
-        ];
-
-        const renderTemplates = templateArray.map((template, index) => {
+        const renderTemplates = this.state.templateArray.map((template, index) => {
             return (
                 <div className="template__item" key={index} onClick={this.renderChosenTemplate.bind(this, index)}>
-                    <div className="template__image"></div>
-                    <span>{template.name}</span>
+                    <button>{template.name}</button>
                 </div>
             );
         });
@@ -39,6 +40,9 @@ export default class FormTemplate extends Component {
 
         return (
             <div className="template">
+                <h3>Templates</h3>
+                <p>Create your form in a blink of an eye</p>
+
                 {renderTemplates}
             </div>
         );

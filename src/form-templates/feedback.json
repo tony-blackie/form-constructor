@@ -1,10 +1,10 @@
 [
   {
     "type": "label",
-    "text": "Your feedback is very important to us!"
+    "value": "Your feedback is very important to us!"
   },
   {
     "type": "text",
-    "text": "Your feedback goes here"
+    "value": "Your feedback goes here"
   }
 ]

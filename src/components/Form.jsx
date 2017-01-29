@@ -31,9 +31,11 @@ export default class Form extends Component {
         return (
             <form className={`form form-${hidden}`}>
                 <h2>Form</h2>
-                <fieldset>{formElements}</fieldset>
-                <br/>
-                <input type="submit" value="Submit"/>
+                <fieldset className="form__fieldset">
+                    {formElements}
+                    <br/>
+                    <input type="submit" value="Submit"/>
+                </fieldset>
             </form>
         );
     }

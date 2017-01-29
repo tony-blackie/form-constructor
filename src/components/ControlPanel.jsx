@@ -10,6 +10,7 @@ export default class ControlPanel extends Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleJSONSubmit = this.handleJSONSubmit.bind(this);
+        this.handleChosenTemplate = this.handleChosenTemplate.bind(this);
     }
 
     handleSubmit(formElement) {
@@ -20,10 +21,14 @@ export default class ControlPanel extends Component {
         this.props.handleJSONSubmit(json);
     }
 
+    handleChosenTemplate(template) {
+        this.props.handleChosenTemplate(template);
+    }
+
     render() {
         return (
             <div className="control-panel">
-                <FormTemplate />
+                <FormTemplate renderChosenTemplate={this.handleChosenTemplate} />
                 <FormConstructor handleSubmit={this.handleSubmit} />
                 <FormConfig handleJSONSubmit={this.handleJSONSubmit} isJSONInvalid={this.props.isJSONInvalid} />
             </div>
