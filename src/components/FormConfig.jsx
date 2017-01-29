@@ -39,7 +39,7 @@ export default class FormConfig extends Component {
     render() {
         return (
             <form className="config">
-                <h3>Paste JSON config here, to auto-generate form</h3>
+                <h3 className="config__header">Paste JSON config here, to auto-generate form</h3>
 
                 <div className="config__example-wrapper">
                     <button

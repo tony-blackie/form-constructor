@@ -38,7 +38,7 @@ export default class FormConstructor extends Component {
     render() {
         return (
             <div className="constructor">
-                <h3>Form Constructor</h3>
+                <h3 className="constructor__header">Form Constructor</h3>
                 <div className="constructor__component">
                     <label>Please, input the text you want to be inside the element</label>
                     <div>

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ReactDOM, { render } from 'react-dom';
-import { Link } from 'react-router';
 import ControlPanel from './ControlPanel.jsx';
 import Display from './Display.jsx';
 import Styles from '../sass/index.scss';
@@ -53,7 +52,12 @@ export default class App extends Component {
             return;
         }
 
-        this.setState({formElements: parsedJSON});
+        this.setState(
+            {
+                formElements: parsedJSON,
+                isJSONInvalid: false
+            }
+        );
     }
 
     handleChosenTemplate(template) {

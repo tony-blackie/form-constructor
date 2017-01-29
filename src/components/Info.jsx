@@ -48,7 +48,7 @@ export default class Info extends Component {
 
         return (
             <div>
-                <h3>You've added:</h3>
+                <h3 className="info__header">You've added:</h3>
                 <p>{checkboxCounter} Checkboxes</p>
                 <p>{textCounter} Text Inputs</p>
                 <p>{labelCounter} Labels</p>
@@ -58,7 +58,9 @@ export default class Info extends Component {
                 </button>
                 {
                     this.state.isErrorShown ?
-                    <div>Form can't have 0 elements. Please use Form Constructor to add some</div>
+                    <div className="info__error">
+                        Form can't have 0 elements. Please use Form Constructor to add some
+                    </div>
                     : null
                 }
 

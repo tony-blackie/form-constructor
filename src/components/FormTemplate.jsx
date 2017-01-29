@@ -44,7 +44,7 @@ export default class FormTemplate extends Component {
 
         return (
             <div className="template">
-                <h3>Templates</h3>
+                <h3 className="template__header">Templates</h3>
                 <p>Create your form in a blink of an eye</p>
 
                 {renderTemplates}
