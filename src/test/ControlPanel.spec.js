@@ -8,7 +8,7 @@ describe('<ControlPanel/> tests', () => {
     let component;
 
     beforeEach(() => {
-        component = mount(<ControlPanel/>);
+        component = shallow(<ControlPanel/>);
     });
 
     it('should check if FormConfig component has rendered', () => {
