@@ -1,11 +1,12 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
-import { expect } from 'chai';
+import chai, { expect } from 'chai';
 
 import FormConfig from '../components/FormConfig.jsx';
 
 describe('<FormConfig/> tests', () => {
     let component;
+
     beforeEach(() => {
         component = shallow(<FormConfig/>);
     });
@@ -17,5 +18,7 @@ describe('<FormConfig/> tests', () => {
     it('should toggle visibility of <ExampleJSON/> on button click', () => {
         component.find('.config__example-button').simulate('click');
         expect(component.find('ExampleJSON')).to.have.length(1);
+        component.find('.config__example-button').simulate('click');
+        expect(component.find('ExampleJSON')).to.have.length(0);
     });
 });
