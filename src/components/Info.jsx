@@ -53,7 +53,7 @@ export default class Info extends Component {
                 <p>{textCounter} Text Inputs</p>
                 <p>{labelCounter} Labels</p>
 
-                <button onClick={this.createForm}>
+                <button onClick={this.createForm} className="info__submit">
                     Create Form
                 </button>
                 {
