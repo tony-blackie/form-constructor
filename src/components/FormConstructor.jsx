@@ -41,12 +41,14 @@ export default class FormConstructor extends Component {
                 <h3>Form Constructor</h3>
                 <div className="constructor__component">
                     <label>Please, input the text you want to be inside the element</label>
-                    <input
-                        type="text"
-                        placeholder="Text goes here"
-                        onChange={this.handleTextChange}
-                        className="constructor__input"
-                    />
+                    <div>
+                        <input
+                            type="text"
+                            placeholder="Text goes here"
+                            onChange={this.handleTextChange}
+                            className="constructor__input"
+                        />
+                    </div>
                 </div>
                 <div className="constructor__component">
                     <label>Select the type of a form element</label>
