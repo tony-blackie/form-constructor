@@ -20,7 +20,7 @@ export default class Form extends Component {
                     return (
                         <div className="form__row" key={index}>
                             <input type={element.type}/>
-                            {element.value}
+                            <span>{element.value}</span>
                         </div>);
                 default:
                     return null;
