@@ -36,6 +36,11 @@ module.exports = {
         inline: true,    // turn off default running inside the iframe
         stats: 'errors-only' //remove built assets from console output
     },
+    externals: {
+        'cheerio': 'window',
+        'react/lib/ExecutionEnvironment': true,
+        'react/lib/ReactContext': true
+    },
     plugins: [
         new htmlWebpackPlugin(
             {
