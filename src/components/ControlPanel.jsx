@@ -30,7 +30,10 @@ export default class ControlPanel extends Component {
             <div className="control-panel">
                 <FormTemplate renderChosenTemplate={this.handleChosenTemplate} />
                 <FormConstructor handleSubmit={this.handleSubmit} />
-                <FormConfig handleJSONSubmit={this.handleJSONSubmit} isJSONInvalid={this.props.isJSONInvalid} />
+                <FormConfig
+                    handleJSONSubmit={this.handleJSONSubmit}
+                    isJSONInvalid={this.props.isJSONInvalid}
+                />
             </div>
         );
     }

@@ -4,9 +4,8 @@ import {expect} from 'chai';
 
 import ControlPanel from '../components/ControlPanel.jsx';
 
-describe('<ControlPanel/>', () => {
+describe('<ControlPanel/> tests', () => {
     let component;
-
 
     beforeEach(() => {
         component = mount(<ControlPanel/>);
