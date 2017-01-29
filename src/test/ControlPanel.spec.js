@@ -4,14 +4,23 @@ import {expect} from 'chai';
 
 import ControlPanel from '../components/ControlPanel.jsx';
 
-describe('<ControlPanel/>', function () {
-    it('should check if FormConfig component rendered', () => {
-        const component = mount(<ControlPanel/>);
+describe('<ControlPanel/>', () => {
+    let component;
+
+
+    beforeEach(() => {
+        component = mount(<ControlPanel/>);
+    });
+
+    it('should check if FormConfig component has rendered', () => {
         expect(component.find('FormConfig')).to.have.length(1);
     });
 
-    it('should check if FormConstructor component rendered', () => {
-        const component = mount(<ControlPanel/>);
+    it('should check if FormConstructor component has rendered', () => {
         expect(component.find('FormConstructor')).to.have.length(1);
-    })
+    });
+
+    it('should check if FormTemplate component has rendered', () => {
+        expect(component.find('FormTemplate')).to.have.length(1);
+    });
 });
