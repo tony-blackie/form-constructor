@@ -68,3 +68,8 @@ export default class Info extends Component {
         );
     }
 }
+
+Info.propTypes = {
+    formElements: React.PropTypes.array,
+    createForm: React.PropTypes.func
+};

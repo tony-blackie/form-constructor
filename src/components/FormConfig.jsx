@@ -84,3 +84,8 @@ export default class FormConfig extends Component {
         );
     }
 }
+
+FormConfig.propTypes = {
+    handleJSONSubmit: React.PropTypes.func,
+    isJSONInvalid: React.PropTypes.bool
+};

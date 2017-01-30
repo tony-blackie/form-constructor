@@ -82,3 +82,7 @@ export default class FormConstructor extends Component {
         );
     }
 }
+
+FormConstructor.propTypes = {
+    handleSubmit: React.PropTypes.func
+};

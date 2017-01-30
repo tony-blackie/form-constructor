@@ -51,3 +51,8 @@ export default class Form extends Component {
         );
     }
 }
+
+Form.propTypes = {
+    hidden: React.PropTypes.bool,
+    formElements: React.PropTypes.array
+};

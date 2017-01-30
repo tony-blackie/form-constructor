@@ -31,3 +31,9 @@ export default class Display extends Component {
         );
     }
 }
+
+Display.propTypes = {
+    formElements: React.PropTypes.array,
+    nextState: React.PropTypes.array,
+    createForm: React.PropTypes.func
+};

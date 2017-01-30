@@ -52,3 +52,7 @@ export default class FormTemplate extends Component {
         );
     }
 }
+
+FormTemplate.propTypes = {
+    renderChosenTemplate: React.PropTypes.func
+};

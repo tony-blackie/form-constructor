@@ -38,3 +38,10 @@ export default class ControlPanel extends Component {
         );
     }
 }
+
+ControlPanel.propTypes = {
+    handleSubmit: React.PropTypes.func,
+    handleJSONSubmit: React.PropTypes.func,
+    isJSONInvalid: React.PropTypes.bool,
+    handleChosenTemplate: React.PropTypes.func
+};
