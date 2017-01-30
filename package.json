@@ -1,8 +1,9 @@
 {
-  "name": "webpack-config",
+  "name": "form-constructor",
+  "email": "anton.spassky@gmail.com",
   "version": "1.0.0",
-  "description": "Basic webpack config",
-  "main": "index.js",
+  "description": "App for form generation",
+  "main": "app.jsx",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:dev": "node_modules/.bin/webpack-dev-server --inline --content-base dist --history-api-fallback",

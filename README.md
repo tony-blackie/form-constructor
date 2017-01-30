@@ -1,6 +1,8 @@
 ### Form Constructor
 
-Built with: React, ES6
+Built with: React, ES6.
+
+Tools used: Babel, Webpack, Mocha + Chai, Sinon, Enzyme, SASS.
 
 ### Install:
 ```
