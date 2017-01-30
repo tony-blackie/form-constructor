@@ -22,7 +22,7 @@
     border-bottom: 2px solid #ddd;
     margin-bottom: 20px;
     font-size: 15px;
-    padding-bottom: 3px;
+    padding-bottom: 7px;
     text-align: center;
     margin-top: 5px;
   }
@@ -62,7 +62,7 @@
   &__submit {
     border: none;
     padding: 8px 15px 8px 15px;
-    background: #FF8500;
+    background: #4d83c3;
     color: #fff;
     box-shadow: 1px 1px 4px #DADADA;
     -moz-box-shadow: 1px 1px 4px #DADADA;
@@ -73,7 +73,7 @@
     min-width: 130px;
 
     &:hover {
-      background: #EA7B00;
+      background: #638bbb;
       color: #fff;
     }
   }
@@ -81,7 +81,7 @@
   &__example-button {
     border: none;
     padding: 8px 15px 8px 15px;
-    background: #FF8500;
+    background: #4d83c3;
     color: #fff;
     box-shadow: 1px 1px 4px #DADADA;
     -moz-box-shadow: 1px 1px 4px #DADADA;
@@ -91,7 +91,7 @@
     -moz-border-radius: 3px;
 
     &:hover {
-      background: #EA7B00;
+      background: #638bbb;
       color: #fff;
     }
   }

@@ -39,12 +39,14 @@ export default class Form extends Component {
                 <fieldset className="form__fieldset">
                     {formElements}
                     <br/>
+                </fieldset>
+                <div className="form__submit-wrapper">
                     <input
                         type="submit"
                         value="Submit"
                         className="form__submit"
                     />
-                </fieldset>
+                </div>
             </form>
         );
     }
