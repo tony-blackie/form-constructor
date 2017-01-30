@@ -30,18 +30,21 @@ describe('<Form/> tests', () => {
     it('should render text input', () => {
         const formElements = [{type: 'text', value: '1337'}];
         const component = shallow(<Form formElements={formElements} />);
-        expect(component.find('input[type="text"]').html()).to.equal('<input type="text" placeholder="1337"/>');
+        expect(component.find('input[type="text"]').html())
+            .to.equal('<input type="text" placeholder="1337" class="form__input"/>');
     });
 
     it('should render checkbox', () => {
         const formElements = [{type: 'checkbox', value: '1337'}];
         const component = shallow(<Form formElements={formElements} />);
-        expect(component.find('input[type="checkbox"]').html()).to.equal('<input type="checkbox"/>');
+        expect(component.find('input[type="checkbox"]').html())
+            .to.equal('<input type="checkbox" class="form__input"/>');
         expect(component.find('span').html()).to.equal('<span>1337</span>');
     });
 
     it('should always render submit button', () => {
         const component = shallow(<Form formElements={[]} />);
-        expect(component.find('input').html()).to.equal('<input type="submit" value="Submit"/>');
+        expect(component.find('input').html())
+            .to.equal('<input type="submit" value="Submit" class="form__submit"/>');
     })
 });
