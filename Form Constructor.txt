@@ -1,0 +1,75 @@
+Form Constructor
+
+Structure:
+1. How to use
+2. Features
+3. Architecture inputs
+4. Personal opinion and possible clarifications of the requirements
+
+----------
+How to use:
+----------
+
+The application is designed to consist of two parts: Control Panel at the left and display at the right.
+
+Control panel consists of three parts: 
+1. Form Constructor allows to add elements to the form (changes will affect numbers at the display part)
+2. Form Templates uses pre-built templates to genereate a form instantly
+3. Form Config allows to input a custom json and build a form on top of it
+
+Display part consists of: 
+1. Info component displays how many elements were added to a form
+2. Form component displays the generated form
+
+----------
+Features:
+----------
+
+App features nice little things, that were not mentioned in the tech requirements:
+1. Errors for three cases:
+- when no text is provided for form element
+- when trying to create form with no elements
+- when JSON config is invalid
+2. Errors have an animated fade in effect
+3. JSON example is hidden under a 'slider-like' element
+4. There's an Info component, that shows how many elements the created form will have.
+5. Templates are stored as a separate JSON files for usability reasons
+
+----------
+Architecture inputs:
+----------
+
+Basically, the form is built on top of the state, stored in the root component 'App'.
+
+When using the Form Constructor, all the changes affect nextState field of the 'App' state. When button 'Create Form' is clicked, current state.formElements is replaced by the ones that are stored in a nextState field and this forces the view to re-render and to display the form.
+Trying to add an element without the text shows an error and aborts element adding.
+
+Form Templates are stored as separate JSON files in form-templates folder. They are parsed and imported via json-loader npm plugin. 
+When the user clicks chosen template its contents are copied to state.formElements, that triggers immediate re-render and displays the form.
+
+Form Config parses json you paste in the input with try-catch statement. If it is invalid the error is shown. If it is valid it instantly modifies state.formElements and displays the form.
+
+Most components in the app are class components, derived from React.Component. However, the ExampleJSON component is a functional component, with basically no state and props. It is used to just render the <pre> tag with example of a valid JSON. The formatting doesn't look good because <pre> tag renders whitespace "as-is", so trying to do code formating inside a React component made formatting of code incorrect, when it's displayed inside html tags on the page.
+
+You may notice, that 'App' component is not rendered via RenderDOM, but is rendered via react-router plugin instead. It was not required, but it's there if the app needs to be scaled with extra states (pages) in the future. That's the reason why NoMatch component exists in the app.
+
+Unit tests are written in Mocha + Chai using Enzyme library. Not everything is covered with tests, but some important components are.
+
+SASS is used as a CSS preprocessor, each component's styles are stored in a separate file, all of which are then imported into the index.scss file.
+Index.scss is then compiled with webpack's extractHTML plugin to output it as a seperate CSS file, included in the HTML.
+
+----------
+Personal opinion and possible clarifications of the requirements:
+----------
+1. Tech stack
+In my opinion, Redux would be useful for this app. Basically, the whole app state depends on a root component and there's a lot of callback movement down and then up. Also the state of some child components can be stored in the parent state too. Those both things can be achieved with Redux.
+2. Requirements regarding Form Creator (Form Config).
+The requirements are pretty unclear. For example, for this approach a file loader might work just as well as a text input.
+I decided to go with an input, but any of this choices would suit the requirements.
+3. Opinion regarding Form Constructor.
+"Create Form" button is not really necessary, React can re-render form on the fly. Maybe it's obsolete?
+Submit button should be at the end of every form, but should the text inside the button differ?
+4. Commentary on Display part
+The app is made in that way, that only one form can be generated at a time. Maybe, what is needed is to generate multiple forms, or store them in an array and "time-travel" between them? It can be easily achieved with React.
+5. Devices/browsers the app should support
+Currently the HTML/CSS markup is a fixed layout. It could be done with a dynamic adaptive or responsive grid to suit all required browsers/devices/displays. Also no assumptions about tech limits and pollyfills can be made.
