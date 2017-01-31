@@ -11,9 +11,9 @@ npm install
 
 ### Run:
 ```
-npm start
-
-Go to localhost:8080 in your browser
+1. npm start
+2. Wait till you see: 'Webpack: bundle is now VALID'
+3. Go to localhost:8080 in your browser
 ```
 
 ### Run tests:
