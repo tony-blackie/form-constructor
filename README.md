@@ -12,6 +12,8 @@ npm install
 ### Run:
 ```
 npm start
+
+Go to localhost:8080 in your browser
 ```
 
 ### Run tests:
