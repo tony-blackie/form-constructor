@@ -24,7 +24,7 @@ export default class Form extends Component {
                 case 'checkbox':
                     return (
                         <div className="form__row" key={index}>
-                            <input type={element.type} className="form__input" />
+                            <input type={element.type} className="form__input-checkbox" />
                             <span>{element.value}</span>
                         </div>);
                 default:
